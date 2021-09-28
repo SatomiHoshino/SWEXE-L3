@@ -3,24 +3,28 @@
 <% end %>
 
 <% @tweets.each do |tweet| %>
-    <p>
 
-        <%= tweet.message %>
+    <div class = "pageBody">
+        <p>
+    
+            <%= tweet.message %>
+            <br>
+            <%= time_ago_in_words(tweet.created_at) + '前' %>
+    
+        </p>
+        
+        <%= link_to '表示', tweet_path(tweet.id) %>
+        <%= link_to '編集', edit_tweet_path(tweet.id) %>
+        <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+        
         <br>
-        <%= time_ago_in_words(tweet.created_at) + '前' %>
+        <br>
+ 
+    </div>
 
-    </p>
-    
-    <%= link_to '表示', "/tweets/#{tweet.id}" %>
-    <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
-    <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-    
-    <br>
-    <p>
-        <%= '------------------------------------------' %>
-    </p>
 <% end %>
 
-<%= link_to '新規追加', '/tweets/new' %>
+
+
 
 
