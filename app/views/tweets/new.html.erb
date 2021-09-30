@@ -1,16 +1,21 @@
 <% if @tweet.errors.present? %>
-<h3>エラーがあります。</h3>
-<ul>
-    <% @tweet.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-</ul>
+    <h3 class = "pageBody-text">エラーがあります。</h3>
+    <ul>
+        <% @tweet.errors.full_messages.each do |msg| %>
+        <li class = "pageBody-text"><%= msg %></li>
+        <% end %>
+    </ul>
 <% end %>
 
 <%= form_for @tweet, url: {action: :create} do |f| %>
-<p>
-    <%= f.label :message, 'メッセージ' %>
-    <%= f.text_field :message %>
-</p>
-<%= f.submit '登録' %>
+<div class = "pageBody-text">
+    <p class = "text-area">
+        <%= f.label :message, 'ツイート' %>
+        <%= f.text_area :message %>
+    </p>
+    <div class = "text-btn">
+        <%= f.submit '登録' %>
+    </div>
+</div>
+
 <% end %>
