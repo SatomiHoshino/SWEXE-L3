@@ -18,7 +18,8 @@
         <%= render "sidebar" %>
       </div>
       <div id="content">
-        <%= yield @tweet %>
+        <%= yield :create %>
+        <%= yield :update %>
         
       </div>
       <div id="footer">
