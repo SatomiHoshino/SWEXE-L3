@@ -140,7 +140,10 @@ nav li a:hover { /*ボタンの色　マウスが当たった時*/
     color: white ; 
 }
 
-
+.link-1 {
+    text-decoration: none;
+    color: black ; 
+}
 
 .right-link {
     text-decoration: none;
