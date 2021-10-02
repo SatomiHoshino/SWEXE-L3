@@ -5,6 +5,7 @@
         <li class = "pageBody-text"><%= msg %></li>
         <% end %>
     </ul>
+
 <% end %>
 
 <%= form_for @tweet, url: {action: :create} do |f| %>
@@ -13,8 +14,9 @@
             <%= f.label :message, 'ツイート' %>
             <%= f.text_area :message %>
         </p>
+        <div class = "text-btn">
+            <%= f.submit '投稿' %>
+        </div>
+        <% end %>
     </div>
-    <div class = "text-btn">
-        <%= f.submit '登録' %>
-    </div>
-<% end %>
+
