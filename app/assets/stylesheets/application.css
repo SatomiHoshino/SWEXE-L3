@@ -27,8 +27,9 @@
     padding-bottom: 1.5em;
     padding-left: 2em;
     padding-right: 0em;
-    border: solid 0.5px #999;
+
     border-bottom: 2em;
+    border: solid 0.5px #999;
 }
 
 #sidebar {
@@ -90,7 +91,7 @@ nav li {
 nav li a { /*ボタンの色*/
     font-size: 1.25rem;
     text-decoration: none;
-    padding: 8px;
+    padding: 27px;
     color:  #999;
 
 
@@ -183,5 +184,21 @@ nav li a:hover { /*ボタンの色　マウスが当たった時*/
 
 
 .right-space {
+    margin-left: 10px;
+}
+
+.right-space1 {
     margin-left: 60px;
 }
+
+/*--------------------------------------------------*/
+.form {
+    float: left;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+
+
+
+

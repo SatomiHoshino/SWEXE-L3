@@ -8,12 +8,14 @@
 
 <% end %>
 
+
+<%= render "form" %>
 <div class = "pageBody-text">
     <%= form_for @tweet, url: {action: :create} do |f| %>
 
         <p class = "text-area">
             <%= f.label :message, 'ツイート' %>
-            <%= f.text_field :message %>
+            <%= f.text_area :message %>
         </p>
         <div class = "text-btn">
             <%= f.submit '投稿' %>

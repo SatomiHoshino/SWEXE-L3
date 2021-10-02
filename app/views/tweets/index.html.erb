@@ -1,46 +1,26 @@
-<% @tweets.each do |tweet| %>
-
-    <div class = "pageBody">
-
-            <nobr class = "right-space">
-                <a class = "huto">
-                    近畿大学
-                </a>
-                
-                    @kinikidaigakuPR・
-
-                <%= tweet.tdate.strftime("%m月%d日") %>
-            
-                <a class = "right-link">
-                    <%= link_to '・・・', tweet_path(tweet.id), class:"right-link", method: :delete %>
-                </a>
-                
-                
-            </nobr>
-            <a class =  "right-space">
-                <%= safe_join(tweet.message.split("\n"),tag(:br)) %>
-            </a>
-
-
-
-
-                
-            </header>
-            
-            <a class = "pageBody-s">
-            <%= image_tag "snow07" %>
-                <p>
-                    情報学部｜近畿大学<br>
-                    近畿大学公式ウェブサイト。このページは、情報学部に関する情報をご覧いただけます。<br>
-                    🔗kindai.ac.jp
-                </p>
-            </a>
-        </p>
-        
-
-    </div>
-    
-
-
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
 <% end %>
+
+<% @tweets.each do |tweet| %>
+    <p>
+
+        <%= tweet.message %>
+        <br>
+        <%= time_ago_in_words(tweet.created_at) + '前' %>
+
+    </p>
+    
+    <%= link_to '表示', "/tweets/#{tweet.id}" %>
+    <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
+    <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+    
+    <br>
+    <p>
+        <%= '------------------------------------------' %>
+    </p>
+<% end %>
+
+<%= link_to '新規追加', 'new_tweet_path' %>
+
 
