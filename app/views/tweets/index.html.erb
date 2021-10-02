@@ -2,25 +2,56 @@
     <%= flash[:notice] %>
 <% end %>
 
+
 <% @tweets.each do |tweet| %>
-    <p>
 
-        <%= tweet.message %>
-        <br>
-        <%= time_ago_in_words(tweet.created_at) + '前' %>
+    <div class = "pageBody">
+        
+           
 
-    </p>
+
+
+            <div class = "right-space">
+                <%= image_tag "パターン04", size: '27x27' %>
+                
+                <a class = "huto">
+                    &nbsp;&nbsp;&nbsp;近畿大学
+                </a>
+                
+                    @kinikidaigakuPR・
+
+                <%= tweet.tdate.strftime("%m月%d日") %>
+            
+                <a class = "right-link">
+                    <%= link_to '・・・', tweet_path(tweet.id), class:"right-link", method: :delete %>
+                </a>
+                
+                
+            </divr>
+            <br>
+            <a class =  "right-space1">
+                <%= safe_join(tweet.message.split("\n"),tag(:br)) %>
+            </a>
+
+
+
+
+                
+            </header>
+            
+            <a class = "pageBody-s">
+            <%= image_tag "snow07" %>
+                <p>
+                    情報学部｜近畿大学<br>
+                    近畿大学公式ウェブサイト。このページは、情報学部に関する情報をご覧いただけます。<br>
+                    🔗kindai.ac.jp
+                </p>
+            </a>
+            
+        <p class =  "right-space1">💭 2 　 　□ 14 　 　♡ 69  　　　　□</p>
+    </div>
     
-    <%= link_to '表示', "/tweets/#{tweet.id}" %>
-    <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
-    <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-    
-    <br>
-    <p>
-        <%= '------------------------------------------' %>
-    </p>
+
+
 <% end %>
-
-<%= link_to '新規追加', 'new_tweet_path' %>
-
 
