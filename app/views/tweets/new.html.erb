@@ -8,8 +8,9 @@
 
 <% end %>
 
-<%= form_for @tweet, url: {action: :create} do |f| %>
-    <div class = "pageBody-text">
+<div class = "pageBody-text">
+    <%= form_for @tweet, url: {action: :create} do |f| %>
+
         <p class = "text-area">
             <%= f.label :message, 'ツイート' %>
             <%= f.text_area :message %>
@@ -17,6 +18,6 @@
         <div class = "text-btn">
             <%= f.submit '投稿' %>
         </div>
-        <% end %>
-    </div>
+    <% end %>
+</div>
 
