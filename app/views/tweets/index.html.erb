@@ -6,52 +6,36 @@
 <% @tweets.each do |tweet| %>
 
     <div class = "pageBody">
-        
-           
-
-
-
-            <div class = "right-space">
-                <%= image_tag "パターン04", size: '27x27' %>
-                
-                <a class = "huto">
-                    &nbsp;&nbsp;&nbsp;近畿大学
-                </a>
-                
-                    @kinikidaigakuPR・
-
+        <nobr class = "right-space">
+            <%= image_tag "パターン04", size: '27x27' %>
+            <a class = "huto">
+                &nbsp;&nbsp;&nbsp;近畿大学
+            </a>
+                <%= '@kinikidaigakuPR・' %>
                 <%= tweet.tdate.strftime("%m月%d日") %>
             
-                <a class = "right-link">
-                    <%= link_to '・・・', tweet_path(tweet.id), class:"right-link", method: :delete %>
-                </a>
-                
-                
-            </divr>
-            <br>
-            <a class =  "right-space1">
-                <%= safe_join(tweet.message.split("\n"),tag(:br)) %>
+            <a class = "right-link">
+                <%= link_to '・・・', tweet_path(tweet.id), class:"right-link", method: :delete %>
             </a>
-
-
-
-
-                
-            </header>
-            
-            <a class = "pageBody-s">
-            <%= image_tag "snow07" %>
-                <p>
-                    情報学部｜近畿大学<br>
-                    近畿大学公式ウェブサイト。このページは、情報学部に関する情報をご覧いただけます。<br>
-                    🔗kindai.ac.jp
-                </p>
-            </a>
-            
-        <p class =  "right-space1">💭 2 　 　□ 14 　 　♡ 69  　　　　□</p>
-    </div>
+        </nobr>
     
-
-
+        <br>
+        <a class =  "right-space1">
+            <%= safe_join(tweet.message.split("\n"),tag(:br)) %>
+        </a>
+  
+                
+  
+            
+        <a class = "pageBody-s">
+            <%= image_tag "snow07" %>
+            <p>
+                情報学部｜近畿大学<br>
+                近畿大学公式ウェブサイト。このページは、情報学部に関する情報をご覧いただけます。<br>
+                🔗kindai.ac.jp
+            </p>
+        </a>
+        <p class =  "right-space1">💭 2 　 　□ 14 　 　♡ 69  　　　　□</p>
+      </div>
 <% end %>
 
