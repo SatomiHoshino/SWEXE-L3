@@ -15,7 +15,8 @@
     
         <br>
         <a class =  "right-space1">
-            <%= tweet.message %>
+            <%= safe_join(tweet.message.split("\n"),tag(:br)) %>
+            
         </a>
         <a class = "pageBody-s">
             <%= image_tag "snow07" %>
