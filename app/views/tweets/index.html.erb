@@ -8,7 +8,6 @@
             </a>
                 <%= '@kinikidaigakuPR・' %>
                 <%= tweet.tdate.strftime("%m月%d日") %>
-            
             <a class = "right-link">
                 <%= link_to '・・・', tweet_path(tweet.id), class:"right-link", method: :delete %>
             </a>
@@ -16,12 +15,8 @@
     
         <br>
         <a class =  "right-space1">
-            <%= safe_join(tweet.message.split("\n"),tag(:br)) %>
+            <%= tweet.message %>
         </a>
-  
-                
-  
-            
         <a class = "pageBody-s">
             <%= image_tag "snow07" %>
             <p>
@@ -31,6 +26,6 @@
             </p>
         </a>
         <p class =  "right-space1">💭 2 　 　□ 14 　 　♡ 69  　　　　□</p>
-      </div>
+    </div>
 <% end %>
 
